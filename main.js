@@ -1,24 +1,15 @@
 $(document).ready(function() {
 var user_id, opcion;
-opcion = 4;
     
-tablaUsuarios = $('#tablaUsuarios').DataTable({  
-    "ajax":{            
-        "url": "bd/crud.php", 
-        "method": 'POST', //usamos el metodo POST
-        "data":{opcion:opcion}, //enviamos opcion 4 para que haga un SELECT
-        "dataSrc":""
-    },
-    "columns":[
-        {"data": "user_id"},
-        {"data": "username"},
-        {"data": "first_name"},
-        {"data": "last_name"},
-        {"data": "gender"},
-        {"data": "password"},
-        {"data": "status"},
-        {"defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btn-sm btnEditar'><i class='material-icons'>edit</i></button><button class='btn btn-danger btn-sm btnBorrar'><i class='material-icons'>delete</i></button></div></div>"}
-    ]
+tablaUsuarios = $('#tablaUsuarios').DataTable({                          
+        "bProcessing": true,
+        "bDeferRender": true,	
+        "bServerSide": true,                
+        "sAjaxSource": "serverside/serversideUsuarios.php",	
+        "columnDefs": [ {
+            "targets": -1,        
+            "defaultContent": "<div class='wrapper text-center'><div class='btn-group'><button class='btn btn-info btn-sm btnEditar' data-toggle='tooltip' title='Editar'><i class='material-icons'>edit</i></button><button class='btn btn-danger btn-sm btnBorrar' data-toggle='tooltip' title='Eliminar'><span class='material-icons'>delete</span></button></div></div>"
+        } ],	    
 });     
 
 var fila; //captura la fila, para editar o eliminar
@@ -43,8 +34,6 @@ $('#formUsuarios').submit(function(e){
     $('#modalCRUD').modal('hide');											     			
 });
         
- 
-
 //para limpiar los campos antes de dar de Alta una Persona
 $("#btnNuevo").click(function(){
     opcion = 1; //alta           

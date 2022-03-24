@@ -10,7 +10,6 @@ $gender = (isset($_POST['gender'])) ? $_POST['gender'] : '';
 $password = (isset($_POST['password'])) ? $_POST['password'] : '';
 $status = (isset($_POST['status'])) ? $_POST['status'] : '';
 
-
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 $user_id = (isset($_POST['user_id'])) ? $_POST['user_id'] : '';
 
@@ -40,13 +39,7 @@ switch($opcion){
         $consulta = "DELETE FROM usuarios WHERE user_id='$user_id' ";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();                           
-        break;
-    case 4:    
-        $consulta = "SELECT * FROM usuarios";
-        $resultado = $conexion->prepare($consulta);
-        $resultado->execute();        
-        $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-        break;
+        break;    
 }
 
 print json_encode($data, JSON_UNESCAPED_UNICODE);//envio el array final el formato json a AJAX

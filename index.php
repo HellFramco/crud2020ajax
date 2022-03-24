@@ -1,32 +1,18 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+  <head>    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="#" />  
-    <title>DataTables</title>
-      
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <!-- CSS personalizado --> 
-    <link rel="stylesheet" href="main.css">  
-      
-      
-    <!--datables CSS básico-->
-    <link rel="stylesheet" type="text/css" href="assets/datatables/datatables.min.css"/>
-    <!--datables estilo bootstrap 4 CSS-->  
-    <link rel="stylesheet"  type="text/css" href="assets/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">    
-      
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">  
-  </head>
-    
+    <title>DataTables</title>      
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="main.css">                
+    <link rel="stylesheet" type="text/css" href="assets/datatables/datatables.min.css"/>    
+    <link rel="stylesheet"  type="text/css" href="assets/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">          
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+  </head>    
   <body> 
-     <header>
-     <h3 class='text-center'></h3>
-     </header>    
-      
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12">            
@@ -49,8 +35,8 @@
                             <th>LastName</th>  
                             <th>Gender</th>
                             <th>Password</th>
-                            <th>Status</th>
-                            <th>Acciones</th>
+                            <th>Status</th>                            
+                            <th>Acciones</th>       
                         </tr>
                     </thead>
                     <tbody>                           
@@ -130,10 +116,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
       
     <!-- datatables JS -->
-    <script type="text/javascript" src="assets/datatables/datatables.min.js"></script>    
-     
-    <script type="text/javascript" src="main.js"></script>  
-    
-    
+    <script type="text/javascript" src="assets/datatables/datatables.min.js"></script>         
+    <script type="text/javascript" src="main.js"></script>      
   </body>
 </html>
